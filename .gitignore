@@ -1,0 +1,51 @@
+# =========================
+# PHP & Composer
+# =========================
+vendor/
+composer.lock
+
+# =========================
+# ENV (Jangan Upload!)
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Cache, Logs, Temporary
+# =========================
+*.log
+*.cache
+*.tmp
+tmp/
+cache/
+logs/
+
+# =========================
+# System Files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+
+# =========================
+# Uploads / Generated Files
+# =========================
+uploads/
+storage/
+public/storage/
+node_modules/
+
+# =========================
+# Misc
+# =========================
+*.bak
+*.sql
+*.sqlite
