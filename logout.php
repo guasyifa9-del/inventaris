@@ -1,0 +1,2 @@
+<?php
+ goto QfzZr; QfzZr: session_start(); goto l4Da1; NFbmA: if (isset($_SESSION["\x75\x73\145\162\137\x69\144"])) { logActivity("\x4c\x4f\107\x4f\125\124", "\114\x6f\147\157\x75\164\x20\x64\141\x72\151\x20\x73\x69\163\x74\145\x6d"); } goto axtt7; rZq2z: header("\x4c\157\143\x61\x74\x69\x6f\x6e\72\40\154\x6f\x67\x69\x6e\56\x70\150\x70"); goto VSTrP; axtt7: session_destroy(); goto rZq2z; l4Da1: require_once "\x6c\x69\142\57\x61\x75\x74\x68\x2e\160\150\160"; goto NFbmA; VSTrP: die;

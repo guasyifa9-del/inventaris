@@ -1,0 +1,597 @@
+/* ========================================
+   INVENTARIS KANTOR V3 - RESPONSIVE CSS
+   ======================================== */
+
+/* CSS Variables */
+:root {
+    --admin-primary: #06b6d4;
+    --admin-secondary: #0891b2;
+    --user-primary: #10b981;
+    --user-secondary: #059669;
+    --success: #10b981;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --info: #3b82f6;
+    --light: #f8f9fa;
+    --dark: #1f2937;
+    --border-radius: 10px;
+    --box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* ========================================
+   GLOBAL STYLES
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    background: #f0f2f5;
+}
+
+/* ========================================
+   SIDEBAR STYLES (Desktop)
+   ======================================== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.sidebar.bg-primary {
+    background: linear-gradient(135deg, var(--admin-primary), var(--admin-secondary));
+}
+
+.sidebar.bg-success {
+    background: linear-gradient(135deg, var(--user-primary), var(--user-secondary));
+}
+
+.sidebar .nav-link {
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: all 0.3s;
+    font-size: 14px;
+}
+
+.sidebar .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.sidebar .nav-link.active {
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+}
+
+/* ========================================
+   MAIN CONTENT
+   ======================================== */
+.main-content {
+    margin-left: 250px;
+    min-height: 100vh;
+    background: #f0f2f5;
+    transition: margin-left 0.3s ease;
+}
+
+/* ========================================
+   CARDS & COMPONENTS
+   ======================================== */
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    border-bottom: none;
+    font-weight: 600;
+}
+
+/* Border Left Cards (Stats) */
+.border-left-primary {
+    border-left: 4px solid var(--admin-primary);
+}
+
+.border-left-success {
+    border-left: 4px solid var(--success);
+}
+
+.border-left-danger {
+    border-left: 4px solid var(--danger);
+}
+
+.border-left-warning {
+    border-left: 4px solid var(--warning);
+}
+
+.border-left-info {
+    border-left: 4px solid var(--info);
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+.btn {
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-sm {
+    padding: 5px 12px;
+    font-size: 13px;
+}
+
+/* ========================================
+   TABLES
+   ======================================== */
+.table {
+    font-size: 13px;
+}
+
+.table thead th {
+    background: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.table tbody tr {
+    transition: background 0.2s;
+}
+
+.table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+/* ========================================
+   BADGES
+   ======================================== */
+.badge {
+    padding: 5px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+/* ========================================
+   FORMS
+   ======================================== */
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    padding: 8px 12px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--user-primary);
+    box-shadow: 0 0 0 0.2rem rgba(16, 185, 129, 0.25);
+}
+
+.form-label {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* ========================================
+   CALCULATE BOX (Sticky)
+   ======================================== */
+.calculate-box {
+    position: sticky;
+    top: 20px;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border: 2px solid var(--info);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+    
+    .main-content {
+        margin-left: 220px;
+    }
+    
+    h2 {
+        font-size: 22px;
+    }
+    
+    .card {
+        margin-bottom: 15px;
+    }
+}
+
+/* Mobile & Small Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Sidebar becomes top navbar on mobile */
+    .sidebar {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        left: 0 !important;
+        top: 0 !important;
+    }
+    
+    .main-content {
+        margin-left: 0 !important;
+        padding: 15px;
+    }
+    
+    /* Stack columns */
+    .col-md-3, .col-md-4, .col-md-6, .col-lg-3, .col-lg-4, .col-lg-6 {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    /* Smaller font sizes */
+    body {
+        font-size: 13px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    h3 {
+        font-size: 18px;
+    }
+    
+    h4, h5 {
+        font-size: 16px;
+    }
+    
+    /* Cards */
+    .card {
+        margin-bottom: 10px;
+    }
+    
+    .card-body {
+        padding: 15px;
+    }
+    
+    /* Tables responsive */
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .table {
+        font-size: 12px;
+        min-width: 600px; /* Prevent too narrow on mobile */
+    }
+    
+    .table td, .table th {
+        padding: 8px 4px;
+        white-space: nowrap;
+    }
+    
+    /* Buttons */
+    .btn {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+    
+    .btn-sm {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+    
+    /* Forms */
+    .form-control, .form-select {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    .form-label {
+        font-size: 13px;
+    }
+    
+    /* Input groups */
+    .input-group > .btn {
+        padding: 10px;
+    }
+    
+    /* Calculate box */
+    .calculate-box {
+        position: relative;
+        top: auto;
+        margin-top: 20px;
+        padding: 15px;
+    }
+    
+    /* Stat cards - adjust layout */
+    .border-left-primary,
+    .border-left-success,
+    .border-left-danger,
+    .border-left-warning,
+    .border-left-info {
+        border-left: none;
+        border-top: 4px solid;
+    }
+    
+    /* Smaller icons */
+    .fa-2x {
+        font-size: 1.5em !important;
+    }
+    
+    .fa-3x {
+        font-size: 2em !important;
+    }
+    
+    /* Navigation adjustments */
+    .navbar {
+        padding: 10px 15px;
+    }
+    
+    .navbar-brand {
+        font-size: 16px;
+    }
+    
+    /* Modal adjustments */
+    .modal-dialog {
+        margin: 10px;
+    }
+    
+    /* Alerts */
+    .alert {
+        font-size: 13px;
+        padding: 10px 15px;
+    }
+}
+
+/* Extra Small Mobile (max-width: 576px) */
+@media (max-width: 576px) {
+    body {
+        font-size: 12px;
+    }
+    
+    h2 {
+        font-size: 18px;
+    }
+    
+    h3 {
+        font-size: 16px;
+    }
+    
+    .card-body {
+        padding: 12px;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    
+    .btn-group .btn {
+        width: auto;
+    }
+    
+    /* Table on very small screens */
+    .table {
+        font-size: 11px;
+    }
+    
+    .table td, .table th {
+        padding: 6px 3px;
+    }
+    
+    /* Badge smaller */
+    .badge {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+    
+    /* Form controls */
+    .form-control, .form-select {
+        font-size: 13px;
+    }
+    
+    /* Pagination */
+    .pagination {
+        font-size: 12px;
+    }
+    
+    .page-link {
+        padding: 5px 10px;
+    }
+}
+
+/* ========================================
+   LANDSCAPE MODE (Mobile Horizontal)
+   ======================================== */
+@media (max-height: 500px) and (orientation: landscape) {
+    .sidebar {
+        height: auto;
+        max-height: none;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+    .sidebar,
+    .navbar,
+    .btn,
+    .no-print {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    body {
+        font-size: 12px;
+    }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hover-shadow {
+    transition: box-shadow 0.3s;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* ========================================
+   REMOVE ALL OVERLAYS & BACKDROPS
+   ======================================== */
+body::before,
+body::after,
+.overlay,
+.modal-backdrop,
+.loading-overlay,
+.spinner-overlay {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Force remove any background overlays */
+body {
+    position: relative !important;
+}
+
+body > .modal-backdrop,
+body > .overlay,
+body > div[style*="position: fixed"],
+body > div[style*="position: absolute"] {
+    display: none !important;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   CUSTOM SCROLLBAR
+   ======================================== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* ========================================
+   LOADING SPINNER
+   ======================================== */
+.spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* ========================================
+   TOUCH OPTIMIZATION (Mobile)
+   ======================================== */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger tap targets for mobile */
+    .btn {
+        min-height: 44px;
+        padding: 10px 16px;
+    }
+    
+    .nav-link {
+        min-height: 44px;
+        padding: 12px 15px;
+    }
+    
+    /* Remove hover effects on touch devices */
+    .btn:hover,
+    .nav-link:hover,
+    .card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "Inventaris Kantor V3",
+  "short_name": "Inventaris",
+  "description": "Sistem Inventaris Kantor - Kelola barang kantor dengan mudah",
+  "start_url": "/inventaris/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#06b6d4",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/inventaris/assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/inventaris/assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "business"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "Buka Dashboard",
+      "url": "/inventaris/index.php",
+      "icons": [
+        {
+          "src": "/inventaris/assets/images/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Pinjam Barang",
+      "short_name": "Pinjam",
+      "description": "Form Peminjaman Barang",
+      "url": "/inventaris/user/peminjaman/add.php",
+      "icons": [
+        {
+          "src": "/inventaris/assets/images/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
